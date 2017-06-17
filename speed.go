@@ -48,9 +48,10 @@ func BinaryPrefixDict() func(string) ByteSize {
 // inBynaryPrefix(1024) => (1.0,"K")
 func inBynaryPrefix(d int) (float64, string) {
 	plist := []string{"", "K", "M", "G", "T", "P", "E", "Z", "Y"}
+	dict := BinaryPrefixDict()
 	for i, p := range plist {
-		if d < int(BinaryPrefixDict()(p)) {
-			return float64(d) / float64(BinaryPrefixDict()(plist[i-1])), plist[i-1]
+		if d < int(dict(p)) {
+			return float64(d) / float64(dict(plist[i-1])), plist[i-1]
 		}
 	}
 	return float64(d), ""
@@ -168,6 +169,10 @@ func getOption() *option {
 	default:
 		fmt.Fprintf(os.Stderr, "\n\nParameter Error\n") // Todo read more than one file at once
 		os.Exit(9)
+	}
+
+	if filename == "" {
+		*graph = false
 	}
 
 	return &option{
