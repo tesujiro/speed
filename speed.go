@@ -131,12 +131,12 @@ type option struct {
 }
 
 func getOption() *option {
-	var bw *string = flag.String("bandwidth", "", "Bytes Per Sec.")
-	var tty *string = flag.String("tty", "/dev/tty", "tty device name. default: tty")
-	var silent *bool = flag.Bool("silent", false, "Silent Mode")
-	var graph *bool = flag.Bool("graph", false, "Graphic Mode")
-	var data *bool = flag.Bool("show_data", false, "Show All Data Mode")
-	var debug *bool = flag.Bool("debug", false, "Debug Mode")
+	var bw *string = flag.String("b", "", "Bytes Per Sec.")
+	var tty *string = flag.String("t", "/dev/tty", "tty device name. default: tty")
+	var silent *bool = flag.Bool("s", false, "Silent Mode")
+	var graph *bool = flag.Bool("g", false, "Graphic Mode")
+	var data *bool = flag.Bool("a", false, "Show All Data Mode")
+	var debug *bool = flag.Bool("d", false, "Debug Mode")
 	flag.Parse()
 
 	// Parse "bandwidth"

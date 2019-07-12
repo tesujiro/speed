@@ -1,9 +1,10 @@
 # speed
 Simple performance monitor command for reading Linux file.
 
-## Description
+## Example
 
 ## Requirement
+Linux or MacOSX
 
 ## Usage
 ### Show speed of Stdin
@@ -13,24 +14,26 @@ Simple performance monitor command for reading Linux file.
 
 ### Limit bandwidth
 ```
-> SomeCommand | speed -bandwidth 10MB | SomeNextCommand
+> SomeCommand | speed -b 10MB | SomeNextCommand
 ```
 
 ### Show progress
 ```
-> speed -graph SomeBigFile | SomeNextCommand
+> speed -g SomeBigFile | SomeNextCommand
 ```
 
 ### Show progress widh bandwidth
 ```
-> speed -graph -bandwidth 10MB SomeBigFile | SomeNextCommand
+> speed -g -b 10MB SomeBigFile | SomeNextCommand
 ```
 
 ## VS. 
 pv: 
 
 ## Install
-go get github.com/tesujiro/speed
+```
+> go get github.com/tesujiro/speed
+```
 
 ## Licence
 
