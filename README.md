@@ -23,7 +23,7 @@ Simple performance monitor command for reading Linux file.
 
 ### Show progress widh bandwidth
 ```
-> speed -graph SomeBigFile -graph | SomeNextCommand
+> speed -graph -bandwidth 10MB SomeBigFile | SomeNextCommand
 ```
 
 ## VS. 
