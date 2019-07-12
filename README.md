@@ -7,16 +7,24 @@ Simple performance monitor command for reading Linux file.
 
 ## Usage
 ### Show speed of Stdin
-SomeCommand | speed | SomeNextCommand
+```
+> SomeCommand | speed | SomeNextCommand
+```
 
 ### Limit bandwidth
-SomeCommand | speed -bandwidth 10MB | SomeNextCommand
+```
+> SomeCommand | speed -bandwidth 10MB | SomeNextCommand
+```
 
 ### Show progress
-speed -graph SomeBigFile | SomeNextCommand
+```
+> speed -graph SomeBigFile | SomeNextCommand
+```
 
 ### Show progress widh bandwidth
-speed -graph SomeBigFile -graph | SomeNextCommand
+```
+> speed -graph SomeBigFile -graph | SomeNextCommand
+```
 
 ## VS. 
 pv: 
