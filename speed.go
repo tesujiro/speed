@@ -63,10 +63,10 @@ func parseBynaryPrefix(bp string) (int, error) {
 	bp_regex := regexp.MustCompile(`^([\d]+)([[KMGTPEZY]i?]?)?B?$`)
 	result := bp_regex.FindAllStringSubmatch(bp, -1)
 	if len(result) == 0 {
-		return 0, fmt.Errorf("Parse String", bp)
+		return 0, fmt.Errorf("Parse String error: %v", bp)
 	}
 	if i, err := strconv.Atoi(result[0][1]); err != nil {
-		return 0, fmt.Errorf("Convert string to number", result[0][1])
+		return 0, fmt.Errorf("Convert string to number error: %v", result[0][1])
 	} else {
 		if len(result[0]) > 2 {
 			unit := result[0][2]

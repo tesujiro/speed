@@ -10,8 +10,8 @@ func compareInputOutputFile(t *testing.T, s string) {
 	stdout := new(bytes.Buffer)
 
 	opt := &option{
-		speed:    0,
-		unit:     "K",
+		speed: 0,
+		//unit:     "K",
 		silent:   true,
 		graph:    false,
 		filename: "",
