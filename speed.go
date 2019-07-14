@@ -185,11 +185,6 @@ func getOption() *option {
 	}
 }
 
-func sub(i int) {
-	j, p := inBynaryPrefix(i)
-	fmt.Printf("%v==%v%v\n", i, j, p)
-}
-
 func main() {
 	option := getOption()
 
