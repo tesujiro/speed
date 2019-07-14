@@ -435,7 +435,8 @@ func (mon *monitor) standardProgress() {
 		p = fmt.Sprintf("(%3d%%)", int(mon.sk.current*100/mon.sk.size))
 	}
 	j, bp := inBynaryPrefix(mon.sk.currentSpeed())
-	fmt.Fprintf(mon.tty, "\r\033[K[%s]\t%dBytes%s\t@ %.1f%sBps",
+	//fmt.Fprintf(mon.tty, "\r\033[K[%s]\t%dBytes%s\t@ %.1f%sBps",
+	fmt.Fprintf(mon.tty, "\r\033[K[%s] %dBytes%s @ %.1f%sBps",
 		time.Now().Format("2006/01/02 15:04:05.000 MST"),
 		mon.sk.current,
 		p,
@@ -445,7 +446,8 @@ func (mon *monitor) standardProgress() {
 }
 
 func (mon *monitor) getGraphProgress() func() {
-	mon.setWidth(int(getWidth() / 2))
+	//mon.setWidth(int(getWidth() / 2))
+	mon.setWidth(int(getWidth()) - 69)
 	var bar_string string
 	for i := 0; i < mon.width; i++ {
 		bar_string = bar_string + "*"
@@ -459,7 +461,8 @@ func (mon *monitor) getGraphProgress() func() {
 		}
 
 		j, bp := inBynaryPrefix(mon.sk.currentSpeed())
-		fmt.Fprintf(mon.tty, "\r\033[K[%s]\t%dBytes%s\t@ %.1f%sBps\t[%-"+strconv.Itoa(mon.width)+"s]",
+		//fmt.Fprintf(mon.tty, "\r\033[K[%s]\t%dBytes%s\t@ %.1f%sBps\t[%-"+strconv.Itoa(mon.width)+"s]",
+		fmt.Fprintf(mon.tty, "\r\033[K[%s] %dBytes%s @ %.1f%sBps\t[%-"+strconv.Itoa(mon.width)+"s]",
 			time.Now().Format("2006/01/02 15:04:05.000 MST"),
 			mon.sk.current,
 			p,
