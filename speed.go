@@ -194,7 +194,20 @@ func main() {
 	option := getOption()
 
 	if option.filename == "" {
+		//Check if os.Stdin is piped or from terminal
+		fi, err := os.Stdin.Stat() // FileInfo
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Stdin FileInfo Error :%v\n", err)
+			os.Exit(9)
+		}
+
+		if (fi.Mode() & os.ModeCharDevice) != 0 {
+			// from terminal
+			fmt.Fprintf(os.Stderr, "Can't open file or stdin\n")
+			os.Exit(1)
+		}
 		limitedPipe(os.Stdin, os.Stdout, 0, option)
+
 	} else {
 		file, fileinfo, err := openfile(option.filename)
 		if err != nil {
