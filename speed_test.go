@@ -33,7 +33,7 @@ func TestCompareInputOutputShortFile(t *testing.T) {
 
 func TestCompareInputOutputLongFile(t *testing.T) {
 	content := "this is a test file.\n"
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 20; i++ {
 		content += content
 	}
 
