@@ -2,6 +2,7 @@
 Simple performance monitor command for reading Linux file.
 
 ## Example
+![speed sample](https://github.com/tesujiro/speed/blob/master/Speed_Screenshot_20190715_01.gif "speed")
 
 ## Requirement
 Linux or MacOSX
